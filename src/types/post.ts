@@ -7,6 +7,7 @@ export type Post = {
   section: string;
   category: string;
   excerpt: string;
+  gallery?: string[];  
   author: {
     name: string;
     role?: string;
