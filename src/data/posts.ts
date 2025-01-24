@@ -1,37 +1,27 @@
 // Types
-import { Post } from '@/types/post';
-import type { Author } from '@/types/post';
+import { Post, Author } from '@/types/post';
 
 export interface Attachment {
-  type: 'image' | 'video' | 'pdf'
-  url: string
-  title: string
-  thumbnailUrl?: string
-}
-
-export interface Author {
-  name: string
-  image: string
-  role?: string
-  linkedin?: string
-  twitter?: string
-  email?: string
+  type: 'image' | 'video' | 'pdf';
+  url: string;
+  title: string;
+  thumbnailUrl?: string;
 }
 
 export interface Gallery {
-  url: string
+  url: string;
 }
 
 export interface Document {
-  title: string
-  url: string
-  type: 'pdf'
+  title: string;
+  url: string;
+  type: 'pdf';
 }
 
 export interface Video {
-  title: string
-  url: string
-  thumbnail: string
+  title: string;
+  url: string;
+  thumbnail: string;
 }
 
 export const posts: Post[] = [
@@ -78,7 +68,7 @@ Ne manquez pas cette occasion exceptionnelle de découvrir l'essence de la Teran
   {
     id: 'rabat-1',
     title: 'Rencontre avec Son Excellence Madame Seynabou DIAL, Ambassadeur du Sénégal au Maroc',
-    content: `Nous avons eu l'immense honneur d'être reçus par Son Excellence Madame Seynabou DIAL, Ambassadeur du Sénégal au Maroc . Cette rencontre marquante s'inscrit dans le cadre de la présentation officielle du nouveau bureau de l'UGESM section Rabat.
+    content: `Nous avons eu l'immense honneur d'être reçus par Son Excellence Madame Seynabou DIAL, Ambassadeur du Sénégal au Maroc 🇸🇳🇲🇦. Cette rencontre marquante s'inscrit dans le cadre de la présentation officielle du nouveau bureau de l'UGESM section Rabat.
 
 Temps forts de la rencontre :
 Débriefing des réalisations du bureau sortant : Retour sur les initiatives marquantes et les projets aboutis au cours de l'année écoulée.

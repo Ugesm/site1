@@ -5,6 +5,8 @@ export const publications: Publication[] = [
     id: "ji-casa",
     title: "Journée d'Integration de l'UGESM section Casablanca",
     author: {
+      name: "Auteur inconnu",
+      university: "",
       image: "/images/logo.png"
     },
     date: {
@@ -25,8 +27,7 @@ export const publications: Publication[] = [
     author: {
       name: "Papa Ousmane FAYE",
       university: "Université Cadi AYYAD de Marrakech",
-      image: "/images/publications/p1.jpeg",
-      bio: "Jeune activiste panafricain engagé au Maroc, il est le Président de l'ONG African Citizens Association et a reçu la nomination d'Ambassadeur JADE 2019. Membre actif de la CESAM depuis 2014, il est le conseiller du bureau exécutif de la CESAM Settat et fut Secrétaire Général de l'UGESM Settat en 2015. Economiste de formation, il est titulaire d'un master en Géopolitique et Relations Internationales à l'Université Cadi AYYAD de Marrakech et actuellement doctorant en Sciences Politiques. Il est aussi enseignant à l'Université Privée de Marrakech."
+      image: "/images/publications/p1.jpeg"
     },
     date: {
       day: "06",

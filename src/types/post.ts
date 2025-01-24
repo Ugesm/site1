@@ -17,6 +17,7 @@ export type Post = {
   category: string;
   excerpt: string;
   likes: number;
+  videoUrl?: string;
   gallery?: string[];
   documents?: {
     title: string;
