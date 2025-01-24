@@ -57,7 +57,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
         {/* Featured Image */}
         <div className="relative w-full h-96 mb-8">
           <Image
-            src={post.imageUrl}
+            src={post.image}
             alt={post.title}
             fill
             className="rounded-lg object-cover"
