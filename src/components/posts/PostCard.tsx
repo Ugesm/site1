@@ -1,6 +1,6 @@
 'use client'
 
-import { Post } from '@/data/posts'
+import { Post } from '@/types/post'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -26,7 +26,7 @@ export default function PostCard({ post, onLike }: PostCardProps) {
       <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
         <div className="relative h-48 w-full">
           <Image
-            src={post.imageUrl}
+            src={post.image}
             alt={post.title}
             fill
             className="object-cover"
