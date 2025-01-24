@@ -1,0 +1,7 @@
+{
+  "/sections/[city]/page": "app/sections/[city]/page.js",
+  "/toutes-nos-sections/page": "app/toutes-nos-sections/page.js",
+  "/actualites/[id]/page": "app/actualites/[id]/page.js",
+  "/page": "app/page.js",
+  "/publications/[id]/page": "app/publications/[id]/page.js"
+}
