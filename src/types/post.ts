@@ -15,6 +15,7 @@ export type Post = {
   videos?: {
     title: string;
     url: string;
+    thumbnail: string;
   }[];
   author: {
     name: string;
