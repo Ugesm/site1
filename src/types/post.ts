@@ -12,6 +12,10 @@ export type Post = {
     title: string;
     url: string;
   }[];
+  videos?: {
+    title: string;
+    url: string;
+  }[];
   author: {
     name: string;
     role?: string;
