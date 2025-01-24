@@ -776,7 +776,7 @@ export const sections: Section[] = [
         name: 'DJIBY NDIAYE',
         role: 'Secrétaire général',
         image: '/images/bureau/kenitra-sg.jpg',
-        email: 'sg.kenitra@ugesm.org',
+        email: 'bathindiaye145@icloud.com',
         phone: '+212 674-012476',
         isMainMember: true
       },
@@ -784,7 +784,7 @@ export const sections: Section[] = [
         name: 'SERIGNE MBACKÉ LEYE',
         role: 'Secrétaire général adjoint',
         image: '/images/bureau/kenitra-sga.jpg',
-        email: 'sga.kenitra@ugesm.org',
+        email: 'serigneleye001@gmail.com',
         phone: '+212 701-805256',
         isMainMember: true
       },
