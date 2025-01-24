@@ -10,7 +10,6 @@ import Hero from '@/components/home/Hero';
 import SectionsShowcase from '@/components/home/SectionsShowcase';
 import { metadata } from './metadata';
 import Image from 'next/image';
-import Newsletter from '@/components/Newsletter';
 
 export default function Home() {
   const latestPosts = posts.slice(0, 3);
@@ -378,9 +377,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Newsletter Section */}
-      <Newsletter />
 
       <Footer />
     </motion.main>
