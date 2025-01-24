@@ -1,3 +1,12 @@
+export interface Author {
+  name: string;
+  image: string;
+  role?: string;
+  linkedin?: string;
+  twitter?: string;
+  email?: string;
+}
+
 export type Post = {
   id: string;
   title: string;
@@ -7,19 +16,23 @@ export type Post = {
   section: string;
   category: string;
   excerpt: string;
+  likes: number;
   gallery?: string[];
   documents?: {
     title: string;
     url: string;
+    type?: 'pdf';
   }[];
   videos?: {
     title: string;
     url: string;
     thumbnail: string;
   }[];
-  author: {
-    name: string;
-    role?: string;
-    image: string;
-  };
+  attachments?: {
+    type: 'image' | 'video' | 'pdf';
+    url: string;
+    title: string;
+    thumbnailUrl?: string;
+  }[];
+  author: Author;
 };
