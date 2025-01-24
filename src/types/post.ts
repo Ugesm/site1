@@ -7,7 +7,11 @@ export type Post = {
   section: string;
   category: string;
   excerpt: string;
-  gallery?: string[];  
+  gallery?: string[];
+  documents?: {
+    title: string;
+    url: string;
+  }[];
   author: {
     name: string;
     role?: string;
