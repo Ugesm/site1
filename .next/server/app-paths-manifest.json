@@ -1,8 +1,7 @@
 {
   "/publications/[id]/page": "app/publications/[id]/page.js",
   "/page": "app/page.js",
+  "/actualites/page": "app/actualites/page.js",
   "/actualites/[id]/page": "app/actualites/[id]/page.js",
-  "/not-found": "app/not-found.js",
-  "/publications/page": "app/publications/page.js",
-  "/actualites/page": "app/actualites/page.js"
+  "/publications/page": "app/publications/page.js"
 }

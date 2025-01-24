@@ -10,7 +10,7 @@ export function generateOrganizationSchema() {
     logo: `${siteConfig.url}${siteConfig.ogImage}`,
     sameAs: [
       siteConfig.links.twitter,
-      siteConfig.links.github,
+      siteConfig.links.instagram,
     ],
   }
 }
@@ -37,8 +37,10 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; url: strin
     itemListElement: items.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      name: item.name,
-      item: item.url,
+      item: {
+        '@id': item.url,
+        name: item.name,
+      },
     })),
   }
 }
@@ -61,7 +63,7 @@ export function generateArticleSchema(article: {
     datePublished: article.datePublished,
     dateModified: article.dateModified,
     author: {
-      '@type': 'Organization',
+      '@type': 'Person',
       name: article.author,
     },
     publisher: {
