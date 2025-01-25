@@ -36,6 +36,12 @@ export default function AboutPage() {
       logo: '/images/sponsors/arserem-logo.png',
       description: 'Association des Ressortissants Sénégalais Résidents au Maroc',
       website: '#'
+    },
+    {
+      name: 'Optique Cadi Ayyad',
+      logo: '/images/sponsors/sponsor2.png',
+      description: 'Opticien Optométriste Contactologue',
+      website: 'https://opticstore.ma/optiquecadiayyad'
     }
   ];
 
@@ -182,12 +188,22 @@ export default function AboutPage() {
         </div>
 
         {/* Section Développeurs */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12">Notre Équipe de Développement</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {developers.map((dev) => (
-                <div key={dev.name} className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <section className="bg-white rounded-lg shadow-lg p-8 mb-12">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
+            Notre Équipe Technique
+          </h2>
+          <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
+          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+            Découvrez les talents qui façonnent l&apos;avenir numérique de l&apos;UGESM à travers 
+            leur expertise technique et leur vision innovante.
+          </p>
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+              {developers.map((dev, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                >
                   <div className="relative h-64 w-full">
                     <Image
                       src={dev.image}

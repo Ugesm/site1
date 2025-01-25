@@ -21,7 +21,7 @@ export default function Header() {
     { name: 'UGESM Marrakech', id: 'marrakech' },
     { name: 'UGESM Agadir', id: 'agadir' },
     { name: 'UGESM Oujda', id: 'oujda' },
-    { name: 'UGESM Tétouan', id: 'tetouan' },
+    { name: 'UGESM Laâyoune', id: 'laayoune' },
     { name: 'UGESM Tanger', id: 'tanger' },
     { name: 'UGESM El Jadida', id: 'el-jadida' },
     { name: 'UGESM Beni Mellal', id: 'beni-mellal' },

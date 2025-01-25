@@ -27,8 +27,11 @@ export default function Navbar() {
             <Link href="/sections" className="text-gray-600 hover:text-green-600">
               Sections
             </Link>
-            <Link href="/sections/tetouan" className="text-gray-600 hover:text-green-600">
-              Tétouan
+            <Link href="/sections/kenitra" className="text-gray-600 hover:text-green-600">
+              UGESM Kénitra
+            </Link>
+            <Link href="/sections/laayoune" className="text-gray-600 hover:text-green-600">
+              UGESM Laâyoune
             </Link>
             <Link href="/sections/tanger" className="text-gray-600 hover:text-green-600">
               Tanger

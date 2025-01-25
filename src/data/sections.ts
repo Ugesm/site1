@@ -872,7 +872,7 @@ export const sections: Section[] = [
       }
     ],
     address: 'Cité Universitaire, Avenue de l\'Université, Kénitra',
-    email: 'contact.kenitra@ugesm.org',
+    email: 'serigneleye001@gmail.com',
     phone: '+212 621-556093',
     socialMedia: {
       instagram: 'https://www.instagram.com/ugesm.kenitra_/'
@@ -884,44 +884,24 @@ export const sections: Section[] = [
     slogan: 'L\'excellence dans les provinces du Sud',
     description: 'La section de Laâyoune représente les étudiants des provinces du Sud.',
     image: '/images/sections/laayoune.jpg',
-    heroImage: '/images/sections/laayoune-hero.jpg',
-    studentCount: 120,
+    heroImage: '/images/sections/laayoune.jpg',
+    studentCount: 20,
     bureau: [
       {
-        name: 'Hassan El Alaoui',
+        name: 'Mbakhane Ndiaye',
         role: 'Secrétaire Général',
         image: '/images/bureau/laayoune-sg.jpg',
-        email: 'sg.laayoune@ugesm.org',
-        phone: '+212 6XX XX XX XX',
+        email: 'Mbakhane1111@gmail.com',
+        phone: '+212 716607104',
         isMainMember: true
       },
       {
-        name: 'Samira El Fassi',
+        name: 'El hadj Babou Diop',
         role: 'Secrétaire Général Adjoint',
         image: '/images/bureau/laayoune-sga.jpg',
-        email: 'sga.laayoune@ugesm.org',
-        phone: '+212 6XX XX XX XX',
+        email: 'mister2001diop@gmail.com',
+        phone: '+212 617245035',
         isMainMember: true
-      },
-      {
-        name: 'Youssef Tazi',
-        role: 'Trésorier',
-        isMainMember: false
-      },
-      {
-        name: 'Amira Benjelloun',
-        role: 'Responsable Communication',
-        isMainMember: false
-      },
-      {
-        name: 'Karim El Mansouri',
-        role: 'Responsable Événements',
-        isMainMember: false
-      },
-      {
-        name: 'Nadia Chraibi',
-        role: 'Responsable Relations Externes',
-        isMainMember: false
       }
     ],
     universities: [
@@ -932,11 +912,9 @@ export const sections: Section[] = [
       }
     ],
     address: 'Campus Universitaire, Laâyoune',
-    email: 'contact.laayoune@ugesm.org',
-    phone: '+212 5XX XX XX XX',
+    phone: '+212 716607104',
     socialMedia: {
-      facebook: 'https://facebook.com/ugesm.laayoune',
-      instagram: 'https://instagram.com/ugesm.laayoune'
+    
     }
   },
   {

@@ -1,9 +1,7 @@
 {
-  "/actualites/page": "app/actualites/page.js",
-  "/publications/[id]/page": "app/publications/[id]/page.js",
-  "/actualites/[id]/page": "app/actualites/[id]/page.js",
-  "/publications/page": "app/publications/page.js",
-  "/sections/kenitra": "app/sections/kenitra.js",
   "/sections/[city]/page": "app/sections/[city]/page.js",
-  "/not-found": "app/not-found.js"
+  "/sections/laayoune": "app/sections/laayoune.js",
+  "/publications/page": "app/publications/page.js",
+  "/not-found": "app/not-found.js",
+  "/page": "app/page.js"
 }
