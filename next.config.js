@@ -4,6 +4,11 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
+  // Configuration pour HTTPS
+  server: {
+    https: true,
+    port: 3000
+  },
 }
 
 module.exports = nextConfig
