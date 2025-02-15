@@ -347,7 +347,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_posts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3711);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1440);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1691);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4571);
 /* __next_internal_client_entry_do_not_use__ default auto */ 
 
 
@@ -728,7 +728,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [478,979,230,711], () => (__webpack_exec__(2837)));
+var __webpack_exports__ = __webpack_require__.X(0, [478,257,190,711], () => (__webpack_exec__(2837)));
 module.exports = __webpack_exports__;
 
 })();

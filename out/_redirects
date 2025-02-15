@@ -1,7 +1,0 @@
-# Rediriger HTTP vers HTTPS
-http://ugesm.org/* https://ugesm.org/:splat 301!
-http://www.ugesm.org/* https://ugesm.org/:splat 301!
-https://www.ugesm.org/* https://ugesm.org/:splat 301!
-
-# Gérer les routes SPA
-/* /index.html 200

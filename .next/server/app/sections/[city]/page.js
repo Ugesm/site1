@@ -2271,7 +2271,7 @@ function generateStaticParams() {
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [478,979,178,500,230], () => (__webpack_exec__(7924)));
+var __webpack_exports__ = __webpack_require__.X(0, [478,257,178,500,190], () => (__webpack_exec__(7924)));
 module.exports = __webpack_exports__;
 
 })();

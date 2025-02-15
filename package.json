@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -14,6 +16,7 @@
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.4",
     "next": "13.4.19",
+    "next-sitemap": "^4.2.3",
     "postcss": "^8.4.29",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -29,5 +32,8 @@
     "eslint": "^8.48.0",
     "eslint-config-next": "13.4.19",
     "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

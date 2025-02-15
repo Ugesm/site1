@@ -1,19 +1,10 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = "build"
 
 [build.environment]
-  NEXT_PUBLIC_SITE_URL = "https://ugesm.org"
   NODE_VERSION = "18"
-  NEXT_USE_NETLIFY = "true"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  NPM_FLAGS = "--legacy-peer-deps"
 
 [[headers]]
   for = "/*"
@@ -22,5 +13,8 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.ugesm.org; img-src 'self' data: https: http:; media-src 'self' https: http:; font-src 'self' data: https:;"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

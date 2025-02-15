@@ -326,8 +326,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "next/dist/compiled/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(6786);
-// EXTERNAL MODULE: ./node_modules/framer-motion/dist/es/render/dom/motion.mjs + 192 modules
-var motion = __webpack_require__(1691);
+// EXTERNAL MODULE: ./node_modules/framer-motion/dist/es/render/dom/motion.mjs + 194 modules
+var motion = __webpack_require__(4571);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1440);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
@@ -1398,7 +1398,7 @@ const __default__ = proxy.default;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [478,979,230,711,202,638], () => (__webpack_exec__(4896)));
+var __webpack_exports__ = __webpack_require__.X(0, [478,257,190,711,202,638], () => (__webpack_exec__(4896)));
 module.exports = __webpack_exports__;
 
 })();
