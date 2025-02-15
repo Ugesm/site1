@@ -1,14 +1,18 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
   NEXT_PUBLIC_SITE_URL = "https://ugesm.org"
   NODE_VERSION = "18"
+  NEXT_USE_NETLIFY = "true"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [[redirects]]
   from = "/*"
-  to = "/_next/static/:splat"
+  to = "/index.html"
   status = 200
 
 [[headers]]
@@ -19,4 +23,4 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.ugesm.org; img-src 'self' data: blob: https:; media-src 'self' https:; connect-src 'self' https:; font-src 'self' https: data:;"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' *.ugesm.org; img-src 'self' data: https: http:; media-src 'self' https: http:; font-src 'self' data: https:;"
