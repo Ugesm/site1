@@ -5,6 +5,7 @@ import { siteConfig } from './config';
 import Header from '@/components/Header';
 import AnimationLayout from '@/components/AnimationLayout';
 import Breadcrumbs from '@/components/shared/Breadcrumbs';
+import { generateOrganizationSchema, generateWebSiteSchema } from '@/lib/structured-data';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     default: `${siteConfig.name} - ${siteConfig.description}`,
     template: `%s | ${siteConfig.name}`
   },
-  description: siteConfig.description,
+  description: `${siteConfig.description}. Guide complet pour les étudiants sénégalais au Maroc : bourses, universités, logement, vie étudiante et plus encore.`,
   keywords: siteConfig.keywords,
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
@@ -22,8 +23,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     url: siteConfig.url,
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: `${siteConfig.name} - ${siteConfig.description}`,
+    description: `${siteConfig.description}. Votre guide complet pour réussir vos études au Maroc en tant qu'étudiant sénégalais.`,
     siteName: siteConfig.name,
     images: [{
       url: siteConfig.ogImage,
@@ -44,6 +45,25 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
     apple: '/icons/apple-icon.png',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  verification: {
+    google: 'your-google-site-verification',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -52,63 +72,32 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className={inter.className}>
+    <html lang="fr">
       <head>
+        <link rel="canonical" href={siteConfig.url} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@graph': [
-                {
-                  '@type': 'WebSite',
-                  '@id': `${siteConfig.url}/#website`,
-                  url: siteConfig.url,
-                  name: siteConfig.name,
-                  description: siteConfig.description,
-                  publisher: {
-                    '@type': 'Organization',
-                    name: siteConfig.name,
-                    logo: {
-                      '@type': 'ImageObject',
-                      url: `${siteConfig.url}/logo.png`
-                    }
-                  }
-                },
-                {
-                  '@type': 'Organization',
-                  '@id': `${siteConfig.url}/#organization`,
-                  name: siteConfig.name,
-                  url: siteConfig.url,
-                  logo: {
-                    '@type': 'ImageObject',
-                    url: `${siteConfig.url}/logo.png`,
-                    width: 112,
-                    height: 112,
-                    caption: siteConfig.name
-                  },
-                  sameAs: [
-                    'https://twitter.com/ugesmc',
-                    'https://www.facebook.com/ugesmc'
-                  ]
-                }
+                generateOrganizationSchema(),
+                generateWebSiteSchema(),
               ],
             }),
           }}
         />
       </head>
-      <body className="min-h-screen bg-gray-50">
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <div className="flex-grow">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-              <Breadcrumbs />
-              <AnimationLayout>
-                {children}
-              </AnimationLayout>
-            </div>
+      <body className={inter.className}>
+        <Header />
+        <main className="min-h-screen">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <Breadcrumbs />
           </div>
-        </div>
+          <AnimationLayout>
+            {children}
+          </AnimationLayout>
+        </main>
       </body>
     </html>
   );

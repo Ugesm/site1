@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   images: {
-    unoptimized: true,
-    domains: ['localhost', 'ugesm.org', 'images.unsplash.com'],
+    domains: ['localhost'],
+  },
+  // Configuration pour HTTPS
+  server: {
+    https: true,
+    port: 3000
   },
 }
 

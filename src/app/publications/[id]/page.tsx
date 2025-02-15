@@ -9,7 +9,7 @@ interface PublicationPageProps {
   };
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return publications.map((publication) => ({
     id: publication.id,
   }));
@@ -22,22 +22,19 @@ export default function PublicationPage({ params }: PublicationPageProps) {
     notFound();
   }
 
-  // Fonction pour extraire l'ID de la vidéo YouTube de manière statique
+  // Fonction pour extraire l'ID de la vidéo YouTube
   const getYouTubeVideoId = (url: string) => {
-    if (!url) return null;
-    
-    // Format: https://youtu.be/VIDEO_ID
-    if (url.includes('youtu.be/')) {
-      const id = url.split('youtu.be/')[1]?.split('?')[0];
-      return id || null;
+    try {
+      const urlObj = new URL(url);
+      if (urlObj.hostname === 'youtu.be') {
+        return urlObj.pathname.slice(1).split('?')[0];
+      }
+      if (urlObj.hostname === 'www.youtube.com' || urlObj.hostname === 'youtube.com') {
+        return urlObj.searchParams.get('v');
+      }
+    } catch (e) {
+      console.error('Erreur lors de l\'extraction de l\'ID YouTube:', e);
     }
-    
-    // Format: https://www.youtube.com/watch?v=VIDEO_ID
-    if (url.includes('youtube.com/watch')) {
-      const id = url.split('v=')[1]?.split('&')[0];
-      return id || null;
-    }
-    
     return null;
   };
 
@@ -50,23 +47,41 @@ export default function PublicationPage({ params }: PublicationPageProps) {
         <header className="mb-8">
           <div className="relative h-96 rounded-xl overflow-hidden mb-8">
             {publication.videoUrl ? (
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${videoId}`}
-                title={publication.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0"
-              />
+              <a
+                href={publication.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative w-full h-full group"
+              >
+                <Image
+                  src={publication.image}
+                  alt={publication.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/60 flex items-center justify-center group-hover:bg-black/70 transition-colors">
+                  <div className="flex flex-col items-center">
+                    <svg 
+                      className="w-20 h-20 text-green-600 group-hover:text-green-500 transition-colors" 
+                      fill="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                    </svg>
+                    <span className="text-white font-semibold mt-4">Regarder sur YouTube</span>
+                  </div>
+                </div>
+              </a>
             ) : (
-              <Image
-                src={publication.image}
-                alt={publication.title}
-                fill
-                className="object-cover"
-              />
+              <>
+                <Image
+                  src={publication.image}
+                  alt={publication.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+              </>
             )}
             <div className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg">
               <div className="text-2xl font-bold">{publication.date.day}</div>
