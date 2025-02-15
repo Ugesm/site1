@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Footer from '@/components/shared/Footer'
 import { developers } from '@/data/developers';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram } from 'react-icons/fa';
 
 export default function AboutPage() {
   const sponsors = [
@@ -235,6 +235,16 @@ export default function AboutPage() {
                           className="text-gray-600 hover:text-green-600 transition-colors"
                         >
                           <FaGithub className="w-6 h-6" />
+                        </a>
+                      )}
+                      {dev.instagram && (
+                        <a
+                          href={dev.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 hover:text-green-600 transition-colors"
+                        >
+                          <FaInstagram className="w-6 h-6" />
                         </a>
                       )}
                       <a
