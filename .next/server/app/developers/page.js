@@ -228,7 +228,7 @@ module.exports = require("next/dist/shared/lib/utils/warn-once");
 
 /***/ }),
 
-/***/ 2390:
+/***/ 8615:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -579,7 +579,7 @@ function DevelopersPage() {
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [478,257,178,219], () => (__webpack_exec__(2390)));
+var __webpack_exports__ = __webpack_require__.X(0, [478,257,178,247], () => (__webpack_exec__(8615)));
 module.exports = __webpack_exports__;
 
 })();

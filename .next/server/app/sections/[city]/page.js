@@ -228,7 +228,7 @@ module.exports = require("next/dist/shared/lib/utils/warn-once");
 
 /***/ }),
 
-/***/ 7924:
+/***/ 7804:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2271,7 +2271,7 @@ function generateStaticParams() {
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [478,257,178,500,219], () => (__webpack_exec__(7924)));
+var __webpack_exports__ = __webpack_require__.X(0, [478,257,178,500,247], () => (__webpack_exec__(7804)));
 module.exports = __webpack_exports__;
 
 })();
