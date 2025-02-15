@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "cross-env NODE_ENV=production next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -30,8 +30,13 @@
     "@types/node": "^20.5.7",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "cross-env": "^7.0.3",
+    "css-loader": "^7.1.2",
+    "cssnano": "^7.0.6",
     "eslint": "^8.48.0",
     "eslint-config-next": "13.4.19",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
     "typescript": "^5.2.2"
   },
   "engines": {
