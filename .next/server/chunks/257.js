@@ -339,12 +339,7 @@ function urlToUrlWithoutFlightMarker(url) {
     const urlWithoutFlightParameters = new URL(url, location.origin);
     urlWithoutFlightParameters.searchParams.delete(_approuterheaders.NEXT_RSC_UNION_QUERY);
     if (true) {
-        if ( true && urlWithoutFlightParameters.pathname.endsWith(".txt")) {
-            const { pathname } = urlWithoutFlightParameters;
-            const length = pathname.endsWith("/index.txt") ? 10 : 4;
-            // Slice off `/index.txt` or `.txt` from the end of the pathname
-            urlWithoutFlightParameters.pathname = pathname.slice(0, -length);
-        }
+        if (false) {}
     }
     return urlWithoutFlightParameters;
 }
@@ -2622,13 +2617,7 @@ async function fetchServerResponse(url, flightRouterState, nextUrl, currentBuild
     try {
         let fetchUrl = new URL(url);
         if (true) {
-            if (true) {
-                if (fetchUrl.pathname.endsWith("/")) {
-                    fetchUrl.pathname += "index.txt";
-                } else {
-                    fetchUrl.pathname += ".txt";
-                }
-            }
+            if (false) {}
         }
         // Add unique cache query to avoid caching conflicts on CDN which don't respect to Vary header
         fetchUrl.searchParams.set(_approuterheaders.NEXT_RSC_UNION_QUERY, uniqueCacheQuery);
@@ -2642,11 +2631,7 @@ async function fetchServerResponse(url, flightRouterState, nextUrl, currentBuild
         const contentType = res.headers.get("content-type") || "";
         let isFlightResponse = contentType === _approuterheaders.RSC_CONTENT_TYPE_HEADER;
         if (true) {
-            if (true) {
-                if (!isFlightResponse) {
-                    isFlightResponse = contentType.startsWith("text/plain");
-                }
-            }
+            if (false) {}
         }
         // If fetch returns something different than flight response handle it like a mpa navigation
         // If the fetch was not 200, we also handle it like a mpa navigation
@@ -4742,7 +4727,7 @@ const _warnonce = __webpack_require__(8658);
 const _routercontext = __webpack_require__(7160);
 const _imageloader = /*#__PURE__*/ _interop_require_default._(__webpack_require__(5246));
 // This is replaced by webpack define plugin
-const configEnv = {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image/","loader":"default","dangerouslyAllowSVG":false,"unoptimized":true};
+const configEnv = {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":true};
 if (true) {
     globalThis.__NEXT_IMAGE_IMPORTED = true;
 }
@@ -5306,15 +5291,7 @@ const normalizePathTrailingSlash = (path)=>{
         return path;
     }
     const { pathname, query, hash } = (0, _parsepath.parsePath)(path);
-    if (true) {
-        if (/\.[^/]+\/?$/.test(pathname)) {
-            return "" + (0, _removetrailingslash.removeTrailingSlash)(pathname) + query + hash;
-        } else if (pathname.endsWith("/")) {
-            return "" + pathname + query + hash;
-        } else {
-            return pathname + "/" + query + hash;
-        }
-    }
+    if (false) {}
     return "" + (0, _removetrailingslash.removeTrailingSlash)(pathname) + query + hash;
 };
 if ((typeof exports.default === "function" || typeof exports.default === "object" && exports.default !== null) && typeof exports.default.__esModule === "undefined") {
@@ -5566,7 +5543,7 @@ const unstable_getImgProps = (imgProps)=>{
     const { props } = (0, _getimgprops.getImgProps)(imgProps, {
         defaultLoader: _imageloader.default,
         // This is replaced by webpack define plugin
-        imgConf: {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image/","loader":"default","dangerouslyAllowSVG":false,"unoptimized":true}
+        imgConf: {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":true}
     });
     for (const [key, value] of Object.entries(props)){
         if (value === undefined) {
