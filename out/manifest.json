@@ -1,0 +1,21 @@
+{
+  "name": "UGESM - Union Générale des Étudiants Sénégalais au Maroc",
+  "short_name": "UGESM",
+  "description": "Plateforme officielle de l'Union Générale des Étudiants Sénégalais au Maroc",
+  "start_url": "https://ugesm.org",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#16a34a",
+  "icons": [
+    {
+      "src": "https://ugesm.org/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://ugesm.org/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

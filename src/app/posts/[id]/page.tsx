@@ -49,10 +49,10 @@ export default function PostPage({ params }: PostPageProps) {
           {/* Metadata */}
           <div className="flex items-center text-gray-600 mb-8">
             <div className="flex items-center">
-              {post.author?.avatar && (
+              {post.author?.image && (
                 <div className="relative w-10 h-10 mr-3">
                   <Image
-                    src={post.author.avatar}
+                    src={post.author.image}
                     alt={post.author.name}
                     fill
                     className="rounded-full object-cover"
