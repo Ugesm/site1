@@ -1,23 +1,21 @@
-'use client'
-
 import Image from 'next/image'
 import { posts } from '@/data/posts'
 import { notFound } from 'next/navigation'
-import { useState } from 'react'
 import Link from 'next/link'
 import MainLayout from '@/components/layouts/MainLayout'
+import LikeButton from '@/components/posts/LikeButton'
 
-export default function PostPage({ params }: { params: { id: string } }) {
+interface PostPageProps {
+  params: { 
+    id: string 
+  }
+}
+
+export default function PostPage({ params }: PostPageProps) {
   const post = posts.find(p => p.id === params.id)
   
   if (!post) {
     notFound()
-  }
-
-  const [likes, setLikes] = useState(post.likes)
-
-  const handleLike = () => {
-    setLikes(likes + 1)
   }
 
   return (
@@ -50,22 +48,45 @@ export default function PostPage({ params }: { params: { id: string } }) {
 
           {/* Metadata */}
           <div className="flex items-center text-gray-600 mb-8">
-            <span className="mr-4">{post.date}</span>
-            <span>{post.category}</span>
+            <div className="flex items-center">
+              {post.author?.avatar && (
+                <div className="relative w-10 h-10 mr-3">
+                  <Image
+                    src={post.author.avatar}
+                    alt={post.author.name}
+                    fill
+                    className="rounded-full object-cover"
+                  />
+                </div>
+              )}
+              <div>
+                <p className="font-semibold">{post.author?.name}</p>
+                <p className="text-sm">{new Date(post.date).toLocaleDateString('fr-FR', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}</p>
+              </div>
+            </div>
+            <div className="ml-auto">
+              <LikeButton postId={post.id} initialLikes={post.likes} />
+            </div>
           </div>
 
           {/* Featured Image */}
-          <div className="relative w-full h-96 mb-8">
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              className="rounded-lg object-cover"
-            />
-          </div>
+          {post.image && (
+            <div className="relative w-full h-[400px] mb-8">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
+          )}
 
           {/* Content */}
-          <div className="prose max-w-none mb-8">
+          <div className="prose prose-lg max-w-none">
             {post.content.split('\n\n').map((paragraph, index) => (
               <p key={index} className="mb-4">
                 {paragraph}
@@ -73,65 +94,36 @@ export default function PostPage({ params }: { params: { id: string } }) {
             ))}
           </div>
 
-          {/* Video if exists */}
-          {post.videoUrl && (
-            <div className="mb-8">
-              <iframe
-                width="100%"
-                height="480"
-                src={post.videoUrl}
-                title="Video content"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="rounded-lg"
-              />
-            </div>
-          )}
-
-          {/* Like Button */}
-          <div className="mt-8">
-            <button
-              onClick={handleLike}
-              className="flex items-center space-x-2 text-gray-600 hover:text-red-500"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-              <span>{likes} likes</span>
-            </button>
-          </div>
-
-          {/* Author */}
-          <div className="mt-8 border-t pt-8">
-            <div className="flex items-center">
-              <Image
-                src={post.author.image}
-                alt={post.author.name}
-                width={48}
-                height={48}
-                className="rounded-full"
-              />
-              <div className="ml-4">
-                <h3 className="text-lg font-semibold">{post.author.name}</h3>
-                {post.author.role && (
-                  <p className="text-gray-600">{post.author.role}</p>
-                )}
+          {/* Attachments */}
+          {post.attachments && post.attachments.length > 0 && (
+            <div className="mt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Pièces jointes</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {post.attachments.map((attachment, index) => (
+                  <a
+                    key={index}
+                    href={attachment.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block p-4 border rounded-lg hover:bg-gray-50"
+                  >
+                    <p className="font-medium text-blue-600">{attachment.title}</p>
+                    <p className="text-sm text-gray-500 mt-1">
+                      {attachment.type.toUpperCase()}
+                    </p>
+                  </a>
+                ))}
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </MainLayout>
   )
+}
+
+export function generateStaticParams() {
+  return posts.map((post) => ({
+    id: post.id
+  }))
 }
