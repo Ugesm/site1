@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import { FaEnvelope, FaPhone, FaUser } from 'react-icons/fa';
 import { BureauMember } from '@/data/sections';
