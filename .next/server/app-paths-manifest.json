@@ -1,24 +1,8 @@
 {
-  "/_not-found": "app/_not-found.js",
+  "/not-found": "app/not-found.js",
   "/page": "app/page.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/about/page": "app/about/page.js",
-  "/actualites/page": "app/actualites/page.js",
-  "/bibliotheque/page": "app/bibliotheque/page.js",
-  "/bourse-amci/page": "app/bourse-amci/page.js",
-  "/carte-sejour/page": "app/carte-sejour/page.js",
-  "/bourse-senegal/page": "app/bourse-senegal/page.js",
-  "/developers/page": "app/developers/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/faq/page": "app/faq/page.js",
-  "/guide/page": "app/guide/page.js",
-  "/publications/page": "app/publications/page.js",
-  "/posts/page": "app/posts/page.js",
   "/toutes-nos-sections/page": "app/toutes-nos-sections/page.js",
-  "/actualites/[id]/page": "app/actualites/[id]/page.js",
-  "/bibliotheque/publier/page": "app/bibliotheque/publier/page.js",
-  "/posts/[id]/page": "app/posts/[id]/page.js",
-  "/publications/[id]/page": "app/publications/[id]/page.js",
-  "/sections/[city]/page": "app/sections/[city]/page.js",
-  "/couverture-medicale/page": "app/couverture-medicale/page.js"
+  "/sections/laayoune": "app/sections/laayoune.js",
+  "/sections/agadir": "app/sections/agadir.js",
+  "/sections/[city]/page": "app/sections/[city]/page.js"
 }
