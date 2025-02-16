@@ -203,8 +203,7 @@ export default function Header() {
                       className="absolute top-full left-0 w-56 bg-white rounded-lg shadow-lg py-2 z-50"
                     >
                       {sections.map((section) => {
-                        const sectionUrl = `/sections/${section.id}/`;
-                        console.log('Section URL:', sectionUrl);
+                        const sectionUrl = `/sections/${section.id}.html`;
                         return (
                           <Link
                             key={section.id}
@@ -365,8 +364,7 @@ export default function Header() {
                             className="mt-2 pl-4 space-y-2 overflow-y-auto max-h-[60vh] bg-green-700/95 rounded-lg"
                           >
                             {sections.map((section, index) => {
-                              const sectionUrl = `/sections/${section.id}/`;
-                              console.log('Section URL:', sectionUrl);
+                              const sectionUrl = `/sections/${section.id}.html`;
                               return (
                                 <motion.div
                                   key={section.id}
