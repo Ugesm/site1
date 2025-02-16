@@ -1,6 +1,1 @@
-{
-  "/not-found": "app/not-found.js",
-  "/page": "app/page.js",
-  "/sections/kenitra": "app/sections/kenitra.js",
-  "/sections/[city]/page": "app/sections/[city]/page.js"
-}
+{}

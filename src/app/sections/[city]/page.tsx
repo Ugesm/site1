@@ -11,6 +11,13 @@ interface SectionPageProps {
   };
 }
 
+// Générer statiquement les chemins pour toutes les sections
+export const generateStaticParams = () => {
+  return sections.map((section) => ({
+    city: section.id,
+  }));
+};
+
 export default function SectionPage({ params }: SectionPageProps) {
   console.log('City param:', params.city);
   console.log('Available sections:', sections.map(s => s.id));
