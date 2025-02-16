@@ -12,7 +12,11 @@ interface SectionPageProps {
 }
 
 export default function SectionPage({ params }: SectionPageProps) {
+  console.log('City param:', params.city);
+  console.log('Available sections:', sections.map(s => s.id));
+  
   const section = sections.find(s => s.id === params.city);
+  console.log('Found section:', section?.id);
 
   if (!section) {
     return (
