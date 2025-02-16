@@ -2,13 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    unoptimized: true,
+    domains: ['localhost', 'ugesm.org', 'images.unsplash.com'],
   },
-  // Configuration pour HTTPS
-  server: {
-    https: true,
-    port: 3000
-  },
+  output: 'export'
 }
 
 module.exports = nextConfig
