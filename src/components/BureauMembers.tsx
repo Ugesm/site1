@@ -1,5 +1,7 @@
+'use client';
+
 import Image from 'next/image';
-import { FaEnvelope, FaPhone, FaUser } from 'react-icons/fa';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
 import { BureauMember } from '@/data/sections';
 
 interface BureauMembersProps {
@@ -13,46 +15,43 @@ export default function BureauMembers({ members }: BureauMembersProps) {
   return (
     <div className="space-y-12">
       {/* Membres principaux avec photos */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {mainMembers.map((member) => (
           <div
             key={member.name}
             className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
           >
-            <div className="relative h-64 w-full bg-gray-100">
-              {member.image ? (
+            {member.image && (
+              <div className="relative h-64 w-full">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <FaUser className="w-20 h-20 text-gray-400" />
-                </div>
-              )}
-            </div>
+              </div>
+            )}
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-              <p className="text-gray-600 mb-4">{member.role}</p>
-              <div className="space-y-2">
+              <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+              <p className="text-green-600 font-semibold mt-1">{member.role}</p>
+              <div className="mt-4 space-y-2">
                 {member.email && (
-                  <div className="flex items-center text-gray-600">
-                    <FaEnvelope className="w-4 h-4 mr-2" />
-                    <a href={`mailto:${member.email}`} className="hover:text-blue-600">
-                      {member.email}
-                    </a>
-                  </div>
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="flex items-center text-gray-600 hover:text-green-600 transition-colors"
+                  >
+                    <FaEnvelope className="w-5 h-5 mr-2" />
+                    <span>{member.email}</span>
+                  </a>
                 )}
                 {member.phone && (
-                  <div className="flex items-center text-gray-600">
-                    <FaPhone className="w-4 h-4 mr-2" />
-                    <a href={`tel:${member.phone}`} className="hover:text-blue-600">
-                      {member.phone}
-                    </a>
-                  </div>
+                  <a
+                    href={`tel:${member.phone}`}
+                    className="flex items-center text-gray-600 hover:text-green-600 transition-colors"
+                  >
+                    <FaPhone className="w-5 h-5 mr-2" />
+                    <span>{member.phone}</span>
+                  </a>
                 )}
               </div>
             </div>
@@ -60,23 +59,21 @@ export default function BureauMembers({ members }: BureauMembersProps) {
         ))}
       </div>
 
-      {/* Autres membres */}
-      {otherMembers.length > 0 && (
-        <div>
-          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Autres membres du bureau</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherMembers.map((member) => (
-              <div
-                key={member.name}
-                className="bg-white rounded-lg shadow p-6 transform transition duration-300 hover:scale-105"
-              >
-                <h4 className="text-lg font-medium text-gray-900 mb-2">{member.name}</h4>
-                <p className="text-gray-600">{member.role}</p>
-              </div>
-            ))}
-          </div>
+      {/* Autres membres sans photos */}
+      <div className="bg-white rounded-xl shadow-lg p-6">
+        <h3 className="text-xl font-bold text-gray-900 mb-6">Autres Membres du Bureau</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {otherMembers.map((member) => (
+            <div
+              key={member.name}
+              className="p-4 rounded-lg bg-gray-50 border border-gray-100 transform transition duration-300 hover:bg-green-50 hover:border-green-200"
+            >
+              <p className="font-semibold text-gray-900">{member.name}</p>
+              <p className="text-green-600 text-sm mt-1">{member.role}</p>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }

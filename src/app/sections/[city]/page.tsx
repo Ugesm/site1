@@ -4,7 +4,6 @@ import { sections } from '@/data/sections';
 import Image from 'next/image';
 import BureauMembers from '@/components/BureauMembers';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaTelegram } from 'react-icons/fa';
-import { notFound } from 'next/navigation';
 
 interface SectionPageProps {
   params: {
@@ -12,25 +11,15 @@ interface SectionPageProps {
   };
 }
 
-// Générer statiquement les chemins pour toutes les sections
-export async function generateStaticParams() {
-  return sections.map((section) => ({
-    city: section.id,
-  }));
-}
-
-// Fonction pour obtenir les données de la section
-async function getSectionData(cityId: string) {
-  const section = sections.find(s => s.id === cityId);
-  if (!section) return null;
-  return section;
-}
-
-export default async function SectionPage({ params }: SectionPageProps) {
-  const section = await getSectionData(params.city);
+export default function SectionPage({ params }: SectionPageProps) {
+  const section = sections.find(s => s.id === params.city);
 
   if (!section) {
-    notFound();
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h1 className="text-2xl font-bold text-gray-900">Section non trouvée</h1>
+      </div>
+    );
   }
 
   return (

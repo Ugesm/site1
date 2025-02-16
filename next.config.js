@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
   images: {
-    unoptimized: true,
+    domains: ['localhost'],
   },
-  trailingSlash: true,
+  // Configuration pour HTTPS
+  server: {
+    https: true,
+    port: 3000
+  },
 }
 
 module.exports = nextConfig

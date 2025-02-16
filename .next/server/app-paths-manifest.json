@@ -1,8 +1,4 @@
 {
-  "/not-found": "app/not-found.js",
   "/page": "app/page.js",
-  "/toutes-nos-sections/page": "app/toutes-nos-sections/page.js",
-  "/sections/laayoune": "app/sections/laayoune.js",
-  "/sections/agadir": "app/sections/agadir.js",
-  "/sections/[city]/page": "app/sections/[city]/page.js"
+  "/not-found": "app/not-found.js"
 }
