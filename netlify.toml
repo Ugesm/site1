@@ -2,12 +2,18 @@
   command = "npm run build"
   publish = "out"
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Force trailing slash
 [[redirects]]
   from = "/sections/*"
-  to = "/sections/[city].html"
-  status = 200
+  to = "/sections/:splat/"
+  status = 301
+  force = true
 
+# Handle 404s
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404/"
+  status = 404
