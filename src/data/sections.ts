@@ -150,39 +150,114 @@ export const sections: Section[] = [
     studentCount: 380,
     bureau: [
       {
-        name: 'Karim Bennani',
+        name: 'Cheikh Tidiane MBOW',
         role: 'Secrétaire Général',
         image: '/images/bureau/casa-sg.jpg',
-        email: 'sg.casa@ugesm.org',
-        phone: '+212 6XX XX XX XX',
+        email: 'cheikhtidinembow@gmail.com',
+        phone: '+212 603566417',
         isMainMember: true
       },
       {
-        name: 'Salma Tazi',
+        name: 'Ndeye SECK',
         role: 'Secrétaire Général Adjoint',
         image: '/images/bureau/casa-sga.jpg',
-        email: 'sga.casa@ugesm.org',
-        phone: '+212 6XX XX XX XX',
+        email: 'secknd8@gmail.com',
+        phone: '+212 705-111348',
         isMainMember: true
       },
       {
-        name: 'Omar Alaoui',
+        name: 'Sidy LO',
         role: 'Trésorier',
         isMainMember: false
       },
       {
-        name: 'Leila Berrada',
-        role: 'Responsable Communication',
+        name: 'Aïssatou KA',
+        role: 'Adjointe Trésorier',
         isMainMember: false
       },
       {
-        name: 'Mehdi Chraibi',
-        role: 'Responsable Événements',
+        name: 'Ndeye Ndoumbé FALL',
+        role: 'Commissaire aux Comptes',
         isMainMember: false
       },
       {
-        name: 'Sofia El Fassi',
-        role: 'Responsable Relations Externes',
+        name: 'Adja Ndeye Seynabou NDAO',
+        role: 'Chargée Organisationnelle',
+        isMainMember: false
+      },
+      {
+        name: 'Amadou Lamine SAR',
+        role: 'Adjoint Chargé Organisationnel',
+        isMainMember: false
+      },
+      {
+        name: 'Mame Mariéme Laye THIOM',
+        role: 'Chargée Communication',
+        isMainMember: false
+      },
+      {
+        name: 'Oumou Kalsoum FALL',
+        role: 'Adjointe Chargée Communication',
+        isMainMember: false
+      },
+      {
+        name: 'Aliou SY',
+        role: 'Chargé Sportif',
+        isMainMember: false
+      },
+      {
+        name: 'Abdoul Aziz Dabakh FALL',
+        role: 'Adjoint Chargé Sportif',
+        isMainMember: false
+      },
+      {
+        name: 'Abdourahmane BA',
+        role: 'Chargé Religieux',
+        isMainMember: false
+      },
+      {
+        name: 'Yacine SARR',
+        role: 'Adjoint Chargé Religieux',
+        isMainMember: false
+      },
+      {
+        name: 'Rougui THIAM',
+        role: 'Chargée Culturelle',
+        isMainMember: false
+      },
+      {
+        name: 'Astou DRAME',
+        role: 'Adjointe Chargée Culturelle',
+        isMainMember: false
+      },
+      {
+        name: 'Papa Ndiogou DIAGNE',
+        role: 'Chargé et Suivi des Programmes',
+        isMainMember: false
+      },
+      {
+        name: 'Fatou Kiné FALL',
+        role: 'Adjointe Chargée et Suivi des Programmes',
+        isMainMember: false
+      },
+      {
+        name: 'Mouhamadou GNING',
+        role: 'Chargé des Relations Extérieures',
+        isMainMember: false
+      },
+      {
+        name: 'Maïmouna DIOP',
+        role: 'Chargée Académique',
+        isMainMember: false
+      },
+      {
+        name: 'Ababacar Siby DIALLO',
+        role: 'Adjoint Chargé Académique',
+        isMainMember: false
+      },
+      {
+        name: 'Astou DIOP',
+        role: 'Assistante Chargée Académique',
         isMainMember: false
       }
     ],
@@ -194,11 +269,10 @@ export const sections: Section[] = [
       }
     ],
     address: 'Cité Universitaire, Boulevard Moulay Ismail, Casablanca',
-    email: 'contact.casa@ugesm.org',
-    phone: '+212 5XX XX XX XX',
+    email: 'cheikhtidinembow@gmail.com',
+    phone: '+212 603566417',
     socialMedia: {
-      facebook: 'https://facebook.com/ugesm.casa',
-      instagram: 'https://instagram.com/ugesm.casa'
+         instagram: 'https://www.instagram.com/ugesm_casablanca_/'
     }
   },
   {
@@ -527,7 +601,7 @@ export const sections: Section[] = [
       },
       {
         name: 'Dame Selane',
-        role: 'Trésorier',
+        role: 'Trésorière',
         isMainMember: true
       },
       {
