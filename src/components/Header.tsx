@@ -200,23 +200,24 @@ export default function Header() {
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
                       onMouseLeave={() => setShowSections(false)}
-                      className="absolute top-full right-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 z-50 max-h-[70vh] overflow-y-auto"
+                      className="absolute top-full left-0 w-56 bg-white rounded-lg shadow-lg py-2 z-50"
                     >
-                      {sections.map((section, index) => (
-                        <motion.div
-                          key={section.id}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.05 }}
-                        >
+                      {sections.map((section) => {
+                        const sectionUrl = `/sections/${section.id}/`;
+                        console.log('Section URL:', sectionUrl);
+                        return (
                           <Link
-                            href={`/sections/${section.id}`}
-                            className="block px-4 py-2.5 text-gray-800 hover:bg-green-100 hover:text-green-600 transition-colors duration-200"
+                            key={section.id}
+                            href={sectionUrl}
+                            className={`block px-4 py-2 text-sm hover:bg-gray-100 ${
+                              pathname === sectionUrl ? 'text-primary font-semibold' : 'text-gray-700'
+                            }`}
+                            onClick={() => setShowSections(false)}
                           >
                             {section.name}
                           </Link>
-                        </motion.div>
-                      ))}
+                        );
+                      })}
                     </motion.div>
                   )}
                   {link.dropdownType === 'guide' && showGuide && (
@@ -363,21 +364,25 @@ export default function Header() {
                             transition={{ duration: 0.3 }}
                             className="mt-2 pl-4 space-y-2 overflow-y-auto max-h-[60vh] bg-green-700/95 rounded-lg"
                           >
-                            {sections.map((section, index) => (
-                              <motion.div
-                                key={section.id}
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.05 }}
-                              >
-                                <Link
-                                  href={`/sections/${section.id}`}
-                                  className="block text-white hover:text-green-200 py-2 px-2 transition-colors duration-200"
+                            {sections.map((section, index) => {
+                              const sectionUrl = `/sections/${section.id}/`;
+                              console.log('Section URL:', sectionUrl);
+                              return (
+                                <motion.div
+                                  key={section.id}
+                                  initial={{ opacity: 0, x: -20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: index * 0.05 }}
                                 >
-                                  {section.name}
-                                </Link>
-                              </motion.div>
-                            ))}
+                                  <Link
+                                    href={sectionUrl}
+                                    className={`block text-white hover:text-green-200 py-2 px-2 transition-colors duration-200`}
+                                  >
+                                    {section.name}
+                                  </Link>
+                                </motion.div>
+                              );
+                            })}
                           </motion.div>
                         )}
                         {link.dropdownType === 'guide' && showGuide && (

@@ -13,14 +13,21 @@ interface SectionPageProps {
 }
 
 // Générer statiquement les chemins pour toutes les sections
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return sections.map((section) => ({
     city: section.id,
   }));
 }
 
-export default function SectionPage({ params }: SectionPageProps) {
-  const section = sections.find(s => s.id === params.city);
+// Fonction pour obtenir les données de la section
+async function getSectionData(cityId: string) {
+  const section = sections.find(s => s.id === cityId);
+  if (!section) return null;
+  return section;
+}
+
+export default async function SectionPage({ params }: SectionPageProps) {
+  const section = await getSectionData(params.city);
 
   if (!section) {
     notFound();
