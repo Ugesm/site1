@@ -24,7 +24,7 @@ export default function Header() {
     { name: 'UGESM Laâyoune', id: 'laayoune' },
     { name: 'UGESM Tanger', id: 'tanger' },
     { name: 'UGESM El Jadida', id: 'el-jadida' },
-    { name: 'UGESM Beni Mellal', id: 'beni-mellal' },
+    { name: 'UGESM Beni Mellal-Khouribga', id: 'beni-mellal-khouribga' },
     { name: 'UGESM Kénitra', id: 'kenitra' },
     { name: 'UGESM Benguerir', id: 'benguerir' }
   ];
