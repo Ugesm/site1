@@ -12,6 +12,29 @@ interface PostPageProps {
   };
 }
 
+interface Post {
+  id: string;
+  title: string;
+  image: string;
+  date: string;
+  author: {
+    name: string;
+    image: string;
+  };
+  content: string;
+  category: string;
+  gallery?: string[];
+  documents?: {
+    title: string;
+    url: string;
+  }[];
+  videos?: {
+    title: string;
+    thumbnail: string;
+    url: string;
+  }[];
+}
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 }
@@ -32,6 +55,7 @@ export default function PostPage({ params }: PostPageProps) {
 
   if (!post) {
     notFound();
+    return null;
   }
 
   return (
