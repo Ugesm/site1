@@ -1,6 +1,11 @@
 import Image from 'next/image';
 import Footer from '@/components/shared/Footer';
 
+export const metadata = {
+  title: 'Bourse du Sénégal | UGESM',
+  description: 'Guide complet pour l\'obtention et le renouvellement de la bourse sénégalaise pour les étudiants au Maroc. Informations et procédures détaillées.',
+};
+
 export default function BourseSenegalPage() {
   return (
     <>

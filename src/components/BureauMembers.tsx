@@ -20,6 +20,8 @@ export default function BureauMembers({ members }: BureauMembersProps) {
           <div
             key={member.name}
             className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+            role="article"
+            aria-labelledby={`member-name-${member.name.toLowerCase().replace(/\s+/g, '-')}`}
           >
             {member.image && (
               <div className="relative h-64 w-full">
@@ -28,11 +30,17 @@ export default function BureauMembers({ members }: BureauMembersProps) {
                   alt={member.name}
                   fill
                   className="object-cover"
+                  aria-hidden="true"
                 />
               </div>
             )}
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+              <h3 
+                id={`member-name-${member.name.toLowerCase().replace(/\s+/g, '-')}`}
+                className="text-xl font-bold text-gray-900"
+              >
+                {member.name}
+              </h3>
               <p className="text-green-600 font-semibold mt-1">{member.role}</p>
               <div className="mt-4 space-y-2">
                 {member.email && (
