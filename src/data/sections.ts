@@ -391,7 +391,7 @@ export const sections: Section[] = [
         isMainMember: false
       },
       {
-        name: 'Arouna Diakhaté',
+        name: 'Khadija Ba',
         role: 'Chargé de Communication Adjoint',
         isMainMember: false
       },
