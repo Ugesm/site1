@@ -14,7 +14,7 @@ export const developers: Developer[] = [
     name: "Khadim SEYE",
     role: "Développeur",
     image: "/images/developers/dev1.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/khadim-seye-542b25362?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     instagram: "https://www.instagram.com/khadim.seye_/",
     email: "khadimseye2004@gmail.com",
     description: "A joué un rôle clé dans la refonte du site, en apportant des solutions techniques innovantes et en supervisant l'intégralité du projet, de la conception à la mise en œuvre."
